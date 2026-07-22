@@ -126,7 +126,28 @@ function initInteractions() {
     document.querySelector(".modal-response").textContent = "Thank you. I promise I'll keep proving it.";
     burst(window.innerWidth / 2, window.innerHeight / 2, 90);
   });
-  document.querySelector(".time").addEventListener("click", () => {
+  const timeButton = document.querySelector(".time");
+  const evadeTimeButton = () => {
+    if (prefersReduced || window.matchMedia("(pointer: coarse)").matches) return;
+    timeButton.classList.add("evading");
+    const modalBox = document.querySelector(".answer-modal > div").getBoundingClientRect();
+    const buttonBox = timeButton.getBoundingClientRect();
+    const maxX = Math.max(80, modalBox.width / 2 - buttonBox.width / 2 - 24);
+    const maxY = 62;
+    const direction = Math.random() > 0.5 ? 1 : -1;
+    const x = direction * (90 + Math.random() * maxX);
+    const y = -18 + Math.random() * maxY;
+    gsap.to(timeButton, {
+      x,
+      y,
+      rotate: direction * (3 + Math.random() * 5),
+      duration: 0.42,
+      ease: "back.out(1.7)"
+    });
+  };
+  timeButton.addEventListener("mouseenter", evadeTimeButton);
+  timeButton.addEventListener("focus", evadeTimeButton);
+  timeButton.addEventListener("click", () => {
     document.querySelector(".modal-response").textContent = "That's okay. I'll wait. Take all the time you need.";
   });
 

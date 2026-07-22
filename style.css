@@ -267,6 +267,11 @@ h2 { font-size: clamp(2.7rem, 7vw, 7rem); line-height: .92; }
 .close-modal { position: absolute; top: 12px; right: 14px; border: 0; background: transparent; font-size: 1.8rem; color: var(--deep); }
 .modal-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin: 24px 0 10px; }
 .modal-actions .time { background: linear-gradient(135deg, #c8a765, #e8c88a); color: #4c3f2c; }
+.modal-actions .time.evading {
+  position: relative;
+  z-index: 2;
+  pointer-events: auto;
+}
 .modal-response { min-height: 1.6em; color: var(--highlight); font-weight: 700; }
 
 @keyframes drift { to { transform: translate3d(5vw, 4vh, 0) scale(1.08); } }
