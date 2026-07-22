@@ -248,7 +248,15 @@ h2 { font-size: clamp(2.7rem, 7vw, 7rem); line-height: .92; }
   box-shadow: 0 18px 46px rgba(217,93,122,.28);
   transition: transform .25s ease, box-shadow .25s ease;
 }
-.forgive:hover, .modal-actions button:hover { transform: translateY(-3px) scale(1.03); box-shadow: 0 24px 62px rgba(217,93,122,.34); }
+.forgive:hover { transform: translateY(-3px) scale(1.03); box-shadow: 0 24px 62px rgba(217,93,122,.34); }
+.modal-actions button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 20px 54px rgba(217,93,122,.24);
+}
+.modal-actions .time:hover {
+  color: #4c3f2c;
+  background: linear-gradient(135deg, #c8a765, #e8c88a);
+}
 .back-top { position: fixed; right: 18px; bottom: 18px; width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(244,151,169,.35); background: rgba(255,255,255,.64); backdrop-filter: blur(14px); color: var(--highlight); z-index: 18; opacity: 0; pointer-events: none; transition: opacity .25s ease; }
 .back-top.show { opacity: 1; pointer-events: auto; }
 
