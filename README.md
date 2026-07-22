@@ -1,6 +1,6 @@
 # For Noor
 
-A static animated apology website from Ranveer to Noor.
+A static animated apology website from Ranvir to Noor.
 
 ## Run locally
 
